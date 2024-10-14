@@ -11,7 +11,7 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-title: 'qpctroubleshooting'
-description: 'QPC Troubleshooting Guide'
+title: 'QPC Troubleshooting'
+description: 'Guide to help answer common problems / issues on QPC'
 show_downloads: false
 
