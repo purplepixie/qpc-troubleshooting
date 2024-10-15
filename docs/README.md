@@ -4,7 +4,7 @@ This guide is intended to include common troubleshooting steps and solutions for
 
 If nothing in here helps please don't hesitate to reach out to the class support (lecturer and/or demonstrators).
 
-## Kubernetes (Rancher) Deployment Issues
+# Kubernetes (Rancher) Deployment Issues
 
 ### No services (Sorry no matching options) when adding an ingress rule
 
@@ -29,3 +29,18 @@ Note: a common cause of this is containers built on a Mac/Windows machine with a
 The container image can't be pulled. Most commonly this is an authentication issue (the credentials for the registry secret are wrong; did you change your password?) or perhaps the image is badly named.
 
 Check gitlab and see what you can find, and re-create the secret if needed.
+
+# Docker Issues
+
+### When trying to build on a mac see an error that has something to do with osxkeychain
+
+Check your config.json:
+```cat ~/.docker/config.json```
+
+If you see the following entry ```"credsStore": "osxkeychain"```
+Change it to 
+```"credStore" : "desktop"```
+Just use nano to do this:
+```nano ~/.docker/config``` and then do Control+X and press Y to save and exit.
+
+Note if this keeps happening then after changing the store try: ```docker logout``` to remove any cached Dockerhub credentials.
