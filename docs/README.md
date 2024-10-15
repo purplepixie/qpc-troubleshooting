@@ -4,9 +4,6 @@ This guide is intended to include common troubleshooting steps and solutions for
 
 If nothing in here helps please don't hesitate to reach out to the class support (lecturer and/or demonstrators).
 
-## Contents
-
-{:toc}
 
 # Kubernetes (Rancher) Deployment Issues
 
