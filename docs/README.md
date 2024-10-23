@@ -45,3 +45,11 @@ Just use nano to do this:
 ```nano ~/.docker/config``` and then do Control+X and press Y to save and exit.
 
 Note if this keeps happening then after changing the store try: ```docker logout``` to remove any cached Dockerhub credentials.
+
+### Invalid Manifest
+
+You can see an error in the container that shows a manifest error and possibly some crazy creation dates similar to the below:
+
+![Example of manifest error in gitlab container page](/assets/invalid-tag-manifest.png)
+
+Try building with ```--provenance false``` in your build command.
