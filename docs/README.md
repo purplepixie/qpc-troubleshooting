@@ -50,6 +50,6 @@ Note if this keeps happening then after changing the store try: ```docker logout
 
 You can see an error in the container that shows a manifest error and possibly some crazy creation dates similar to the below:
 
-![Example of manifest error in gitlab container page](/assets/invalid-tag-manifest.png)
+![Example of manifest error in gitlab container page](/assets/images/invalid-tag-manifest.png)
 
 Try building with ```--provenance false``` in your build command.
