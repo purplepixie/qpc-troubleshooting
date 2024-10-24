@@ -4,6 +4,8 @@ This guide is intended to include common troubleshooting steps and solutions for
 
 If nothing in here helps please don't hesitate to reach out to the class support (lecturer and/or demonstrators).
 
+* Table of Contents
+{:toc}
 
 # Kubernetes (Rancher) Deployment Issues
 
@@ -53,3 +55,11 @@ You can see an error in the container that shows a manifest error and possibly s
 ![Example of manifest error in gitlab container page](/assets/images/invalid-tag-manifest.png)
 
 Try building with ```--provenance false``` in your build command.
+
+### Docker build generates an error failed to resolve source metadata with a failed to authorise 401
+
+You may have a stale connection to Dockerhub. In a terminal run:
+
+```docker logout```
+
+And try again.
