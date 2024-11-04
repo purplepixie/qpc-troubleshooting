@@ -61,3 +61,7 @@ You may have a stale connection to Dockerhub. In a terminal run:
 ```docker logout```
 
 And try again.
+
+## Docker login gives an error about storing credentials "pass not initialised" (in WSL or Linux most likely)
+
+Initialise the pass store: ```pass init```
