@@ -65,3 +65,9 @@ And try again.
 ## Docker login gives an error about storing credentials "pass not initialised" (in WSL or Linux most likely)
 
 Initialise the pass store: ```pass init```
+
+# Connectivity Issues
+
+## Connecting to an external service (i.e. cloud hosted DB) times our or fails from QPC
+
+QUB networks block some outgoing connections, for example we regularly see cloud hosted mongoDB connections blocked. You can try a different port, put an external API rather than binary connection in place, or host your DB image locally on the cluster rather than needing an external service.
