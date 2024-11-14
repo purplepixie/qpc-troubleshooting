@@ -71,3 +71,13 @@ Initialise the pass store: ```pass init```
 ## Connecting to an external service (i.e. cloud hosted DB) times our or fails from QPC
 
 QUB networks block some outgoing connections, for example we regularly see cloud hosted mongoDB connections blocked. You can try a different port, put an external API rather than binary connection in place, or host your DB image locally on the cluster rather than needing an external service.
+
+## Connections to my service from the frontend fail with a browser error about CORS (blocked by CORS policy)
+
+CORS is the thing that determines if an API can be called from a web page which has loaded from a different URI host (the origin). So if your frontend loads from ```frontend.blah.qubcloud.uk``` and tries to call a service on ```service.blah.qubcloud.uk``` unless the service API sets a CORS (Access-Control-Allow-Origin) header then it'll be blocked.
+
+Your best bet is to have all your services simply allow all origins by setting the header ```Access-Control-Allow-Origin``` to ```*```.
+
+### My service is definitely setting a CORS header but I'm still getting a CORS blocked error
+
+Go directly to the URL your frontend is calling. Usually this is because the URL results in an error from the ingress proxy (503, 404, etc). The ingress error pages don't have CORS headers so in the frontend you see it as a block due to CORS, but actually it's blocked due to an error.
